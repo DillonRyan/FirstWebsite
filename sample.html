@@ -1,0 +1,118 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Dillon Ryan</title>
+    </head>
+    <body>
+      <body bgcolor="#E6E6FA">
+      <h2><center>Hello, my name is Dillon Ryan!</center></h2>
+      <p><center>I'm currently in my third year of studying computer science in Trinity College Dublin.</center></p>
+      <center><a href="https://github.com/dillonryan">Click here to view my github page<br /></a></center>
+      <center><a href="https://www.linkedin.com/in/dillon-ryan-380270158">Click here to view my linkedIn page</a></center>
+      <center><p>Please feel free to connect with me on linkedIn, and scroll through my github repos</p><center/>
+      <center><img src="myself.jpg" width="200" height="300" alt="Me"></center>
+      <p><center>Here is a countdown to my birthday</center></p>
+
+    <!-- Display the countdown timer in an element -->
+  <p id="demo"></p>
+
+  <script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("May 12, 2020 15:37:25").getTime();
+
+
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+  </script>
+
+
+      <iframe width="420" height="315"
+  src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1">
+  </iframe>
+
+                     <head>
+          <title>BMI Calculator</title>
+
+          <script type="text/javascript">
+
+              function computeBMI() {
+                  // user inputs
+                  var height = Number(document.getElementById("height").value);
+                  var heightunits = document.getElementById("heightunits").value;
+                  var weight = Number(document.getElementById("weight").value);
+                  var weightunits = document.getElementById("weightunits").value;
+
+
+                  //Convert all units to metric
+                  if (heightunits == "inches") height /= 39.3700787;
+                  if (weightunits == "lb") weight /= 2.20462;
+                  weight = weight / 10000;
+
+                  //Perform calculation
+
+                  //        var BMI = weight /Math.pow(height, 2)*10000;
+                  var BMI = Math.round(weight / Math.pow(height, 2) * 10000);
+
+                  //Display result of calculation
+                  document.getElementById("output").innerText = Math.round(BMI * 100) / 100;
+
+                  var output = Math.round(BMI * 100) / 100
+                  if (output < 18.5)
+                      document.getElementById("comment").innerText = "Underweight";
+                  else if (output >= 18.5 && output <= 25)
+                      document.getElementById("comment").innerText = "Normal";
+                  else if (output >= 25 && output <= 30)
+                      document.getElementById("comment").innerText = "Obese";
+                  else if (output > 30)
+                      document.getElementById("comment").innerText = "Overweight";
+                  // document.getElementById("answer").value = output;
+              }
+          </script>
+           </head>
+           <body>
+          <h1>Body Mass Index Calculator</h1>
+          <p>Enter your height: <input type="text" id="height"/>
+              <select type="multiple" id="heightunits">
+                  <option value="metres" selected="selected">metres</option>
+                  <option value="inches">inches</option>
+              </select>
+               </p>
+          <p>Enter your weight: <input type="text" id="weight"/>
+              <select type="multiple" id="weightunits">
+                  <option value="kg" selected="selected">kilograms</option>
+                  <option value="lb">pounds</option>
+              </select>
+          </p>
+          <input type="submit" value="computeBMI" onclick="computeBMI();">
+          <h1>Your BMI is: <span id="output">?</span></h1>
+
+          <h2>This means you are: <span id="comment"> ?</span> </h2>
+           </body>
+
+
+
+    </body>
+  </html>
